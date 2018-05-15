@@ -1,0 +1,81 @@
+/* ==== Google font ==== */
+@import url('http://fonts.googleapis.com/css?family=Lato:400,300,700,900');
+
+body {
+  padding-top: 50px;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;    
+  }
+}
+
+#mainFooter{	
+	display:block;
+}
+#mobileFooter{
+	display:none;
+}
+#mobileFooter span{
+  white-space: normal;
+}
+@media (max-width: 525px) {
+  #mainFooter{	
+	display:none;
+  }
+  #mobileFooter{
+	display:block;
+	white-space:nowrap;
+  }
+}
+
+.modal-open .navbar {
+    left: -16px; /*Tempoary Fix for the model open removing the scroll bar and shifting the nav bar*/
+}
+
+.sonicimg{
+	margin-top:-4px;
+}
+
+.carousel{
+	z-index:-10;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.carousel .item {-webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s;}
+.carousel .active.left {left:0;opacity:0;z-index:2;}
+.carousel .next {left:0;opacity:1;z-index:1;}
+
+.copyright{
+	float:left;
+}
+
+.policy{
+	float:right;
+}
+
+.btn-multiLine{
+	white-space:normal;
+}
+
+.table-responsive{
+	overflow-x:auto;
+	overflow-y:hidden;
+}
+
+.top-buffer { margin-top:20px; }
+
+/* Nav */
+
+a.navbar-brand {
+	color: #fff !important;
+	font-weight: 900;
+}
+a.navbar-brand:hover {
+    color: #ddd !important;
+}

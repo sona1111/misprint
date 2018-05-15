@@ -1,0 +1,315 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}} - App{% endblock %}
+
+{% block mainframe %}
+
+<style>
+
+.panel{
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+
+#importantPrinterTable td:nth-child(3), #printerTable td:nth-child(3){
+
+    white-space: pre-wrap;
+}
+#printerTable tr:hover, #importantPrinterTable tr:hover{
+    cursor:alias;
+}
+
+#eventualClassCheckFrame, #eventualClassCheckPanels{
+    display:none;
+}
+
+#classSubmitBtn{
+    margin-top:10px;
+}
+
+#eventualClassCheckFrame .Zebra_DatePicker_Icon_Wrapper{
+    width:initial !important;
+}
+
+</style>
+<link href="{{url_for('static', filename='css/chat.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url_for('static', filename='css/select2.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url_for('static', filename='css/bootstrap-switch.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url_for('static', filename='css/zebra-default.css')}}" rel="stylesheet" type="text/css">
+<script>
+    var user = "{{user}}";
+</script>
+<script>
+    var fName = "{{fname}}";
+    var lName = "{{lname}}";
+    var defaultFaviconSrc = "{{ url_for('static', filename='img/favicon.ico') }}";
+    var alertFaviconSrc = "{{ url_for('static', filename='img/favicon-warning-triangle.png') }}";
+</script>
+
+
+<div class="jumbotron"  id="mainFrame">
+    <div class="container">
+        <div class="container" id="chatBoxesContainer">
+        </div>
+
+
+        <div class="row">
+        <div class="col-md-4 chatbox" data-chatroom="LOCAL">
+            <div class="panel panel-success">
+                <div class="panel-heading">Local Chat</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <textarea disabled="" class="form-control textoutput" rows="12"></textarea>
+                        <input class="form-control chatmsginput">
+                        <button type="button" class="btn btn-default chatsendbtn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-warning">
+                <div class="panel-heading">Printers with unsolved issues
+                    <button id="refreshBeginBtn" type="button" class="btn btn-xs btn-primary pull-right">
+                        <span class="glyphicon glyphicon-refresh"></span>
+                    </button>
+                    <span id="refreshConfirm" style="margin-right:5px;display:none;" class="glyphicon glyphicon-ok pull-right"></span>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Room</th>
+                          <th>Name</th>
+                          <th>Status</th>
+                          <th>Toner Percent</th>
+                          <th>Tray1</th>
+                          <th>Tray2</th>
+                          <th>Class Time Left</th>
+                        </tr>
+                      </thead>
+                      <tbody id="importantPrinterTable">
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            <div class="panel panel-warning">
+                <div class="panel-heading">Chat Status</div>
+                    <div class="panel-body">
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="status-switch">Availability Status</label>
+                                    <input data-on-text="Available" data-off-text="Away" data-off-color="warning" type="checkbox" name="status-switch" id="status-switch" checked>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="numUsersOnline">Users Online</label>
+                                    <input disabled type="text" class="form-control" id="numUsersOnline">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="numUsersAway">Users Offline</label>
+                                    <input disabled type="text" class="form-control" id="numUsersAway">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="numUsersAway">Users Online</label>
+                                    <ul class="list-group" id="numUsersOnline2">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="col-md-6">-->
+                <!--<div class="panel panel-danger">-->
+                    <!--<div class="panel-heading">Chat</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--<div class="form-group">-->
+                          <!--<textarea class="form-control" rows="12"></textarea>-->
+                            <!--<input class="form-control" style="width: 80%;display: inline-block;margin: 0;">-->
+                            <!--<button type="button" class="btn btn-default" style="width: 20%;margin-left:-3px;vertical-align:initial;">Send</button>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Check a location for ongoing classes</div>
+                    <div class="panel-body">
+                        <label for="classCheck-switch">Mode</label><br>
+                        <input data-on-text="Topical" data-off-text="Eventual" data-off-color="success" type="checkbox" name="classCheck-switch" id="classCheck-switch" checked>
+                        <div class="col-md-12">
+                            <label for="classroom">Class Room</label>
+                            <select class="form-control" id="classroom">
+                                <option value="">(None)</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="topicalClassCheckFrame">
+                          <div class="col-md-12">
+                              <em>(Leave blank to list all locations)</em>
+                              <button type="button" class="btn btn-default btn-block" id="classSubmitBtn">Submit</button>
+                          </div>
+                        </div>
+                        <div class="form-group" id="eventualClassCheckFrame">
+                          <div class="col-md-6">
+                              <label for="classCheckDate">Begin Date</label>
+                              <input class="form-control" type="text" id="classCheckDateBegin">
+                          </div>
+                          <div class="col-md-6">
+                              <label for="classCheckDate">End Date</label>
+                              <input class="form-control" type="text" id="classCheckDateEnd">
+                          </div>
+                          <div class="col-md-12">
+                            <button type="button" class="btn btn-default btn-block" id="classSubmitBtn2">Submit</button>
+                          </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Get results for a specific Printer</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                          <label for="classroom2">Class Room</label>
+                          <select class="form-control" id="classroom2">
+                              <option value="">(None)</option>
+                          </select>
+                        </div>
+
+
+                        <em>(Leave blank to list all locations)</em>
+                        <button type="button" class="btn btn-default btn-block" id="printerSubmitBtn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-6" id="topicalClassCheckPanels">
+            <div class="panel panel-success">
+                <div class="panel-heading">Ending Classes</div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Room</th>
+                          <th>Time Remaining</th>
+                          <th>Class</th>
+                        </tr>
+                      </thead>
+                      <tbody id="classroomTable">
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">Beginning Classes</div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Room</th>
+                          <th>Time Until Start</th>
+                          <th>Class</th>
+                        </tr>
+                      </thead>
+                      <tbody id="classroomBeginningTable">
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6" id="eventualClassCheckPanels">
+            <div class="panel panel-success">
+                <div class="panel-heading">Classes</div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Room</th>
+                          <th>Class</th>
+                          <th>Begin</th>
+                          <th>End</th>
+                        </tr>
+                      </thead>
+                      <tbody id="eventualClassroomTable">
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Printer Results</div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Room</th>
+                          <th>Name</th>
+                          <th>Status</th>
+                          <th>Toner Percent</th>
+                          <th>Tray1</th>
+                          <th>Tray2</th>
+                        </tr>
+                      </thead>
+                      <tbody id="printerTable">
+                      </tbody>
+                    </table>
+                    <table class="table table-hover" style="display:none;">
+                      <thead>
+                        <tr>
+                          <th>Room</th>
+                          <th>Name</th>
+                          <th>Error</th>
+                        </tr>
+                      </thead>
+                      <tbody id="printerErrorsTable">
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<audio style="display:none;" id="alertSound" src="{{ url_for('static', filename='mp3/alert1.mp3') }}" preload="auto"></audio>
+
+<!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>-->
+
+<script type="text/javascript" src="{{url_for('static', filename='js/bootstrap-switch.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/zebra_datepicker.js')}}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js"></script>
+<script src="{{url_for('static', filename='js/select2.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions.js')}}"></script>
+<!--<script src="{{url_for('static', filename='js/underscore-min.js')}}"></script>-->
+<script src="{{url_for('static', filename='js/mainapp.js')}}"></script>
+<script src="{{url_for('static', filename='js/mainappeg.js')}}"></script>
+<script src="{{url_for('static', filename='js/mainappchat.js')}}"></script>
+
+{% endblock %}

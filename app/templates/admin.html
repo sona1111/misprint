@@ -1,0 +1,50 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}} - App{% endblock %}
+
+{% block mainframe %}
+
+<style>
+
+
+</style>
+
+<script>
+
+</script>
+
+<div class="jumbotron"  id="mainFrame">
+    <div class="container">
+       <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">Update The Class Schedule</div>
+                <div class="panel-body">
+                    <h3>Updating the class schedule for a term</h3>
+                    <p>
+                        The class schedule must be populated before the schedule of classes in the app will
+                        function. Under normal circumstances this will only have to be done once per term.
+                        The input field below should be filled in with the name of the Selection choice
+                        for the page <a href="https://ssbprod.raritanval.edu/prod/bwckschd.p_disp_dyn_sched">here</a>.
+                        For example, "Spring 2016" (no quotes). This will attempt to update the schedule for
+                        this term. Please wait the whole time without closing the page, it can take a while.
+                        A message will appear once the process is done. Please run this only at non-peak times,
+                        as it takes a while blocking the main connection.
+                    </p>
+                    <input class="form-control" type="text" id="termName">
+                    <button type="button" class="btn btn-default btn-block" id="termSubmitBtn">Submit</button>
+                    <p id="termSubmitStatus"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>-->
+
+<script type="text/javascript" src="{{url_for('static', filename='js/bootstrap-switch.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions.js')}}"></script>
+    <script src="{{url_for('static', filename='js/admin.js')}}"></script>
+
+
+{% endblock %}

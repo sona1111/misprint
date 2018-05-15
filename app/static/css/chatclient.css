@@ -1,0 +1,56 @@
+
+
+.panel{
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+
+
+textarea{height:300px;
+         width:100%;
+         resize:none;}
+
+textarea.rotate {
+    -webkit-animation: rotation 0.5s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0) translateY(0) ;}
+    to   {-webkit-transform: rotateX(359deg) rotateY(359deg) rotateZ(719deg) translateX(0) translateY(0) ;}
+}
+
+#chatbox{
+padding: 10px;
+border: black inset 3px;
+border-radius: 15px;
+float: left;
+width:550px;
+background-color: grey;
+box-shadow: 10px 10px 5px #A8A8A8 ;
+}
+
+#chatbox br{clear:both;}
+
+#users {width:22%;
+        float:right;
+        border:black solid 1px;
+        height:294px;
+        padding:5px;
+        background-color: #F0F0F0;
+        border: #989898  outset 3px;}
+
+#users ul{overflow:auto;
+}
+
+    .footermsg{
+        border: rgba(49, 128, 0, 0.52) inset 5px;
+    }
+
+.statusmsg{
+    clear:right;
+    float:right;
+    margin-top:-20px;
+    }

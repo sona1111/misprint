@@ -1,0 +1,63 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}} - Profile{% endblock %}
+
+{% block mainframe %}
+
+<style>
+	input[name="oldPassword"]{
+		border-color:#CDD045;
+		-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(215, 233, 102, 0.6);
+		box-shadow:inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(215, 233, 102, 0.6);
+	}
+</style>
+
+<div class="jumbotron" id="mainFrame">
+	<div class="container">
+	<h2>Update Profile Information</h2>
+		
+		{% if profileUpdateForm %}
+		{% set order = [profileUpdateForm.passwordReg,profileUpdateForm.passwordConf,profileUpdateForm.firstName,profileUpdateForm.lastName,profileUpdateForm.company,profileUpdateForm.email,profileUpdateForm.officePhone,profileUpdateForm.mobilePhone,profileUpdateForm.city,profileUpdateForm.state,profileUpdateForm.street,profileUpdateForm.country,profileUpdateForm.zip,profileUpdateForm.oldPassword] %}
+		
+		<form action="profileUpdate" method="post" id = "register" name="register" class="form">
+		{{profileUpdateForm.hidden_tag()}}
+			<div class="col-md-6">
+				{% for update in order[0:7] %}				
+				<div class="form-group {% if update.errors %}has-error{% endif %}">				
+					{{update.label(class="control-label")}}
+					<div class="controls">
+						{{update(class="form-control")}}
+						{% if update.errors %}
+							<span class="help-block pull-right">{{ update.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				{% endfor %}
+			</div>	
+			<div class="col-md-6">
+				{% for update in order[7:] %}				
+				<div class="form-group {% if update.errors %}has-error{% endif %}">				
+					{{update.label(class="control-label")}}
+					<div class="controls">
+						{{update(class="form-control")}}
+						{% if update.errors %}
+							<span class="help-block pull-right">{{ update.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				{% endfor %}
+				<div class="form-group"><label for="registerbtn" class="control-label">&nbsp;</label>
+					<button class="btn btn-success btn-block" type="submit" value="Update" name="registerbtn">Update</button>
+				</div>
+			</div>	
+			
+		</form>
+		{% endif %}
+		</div>
+		
+		
+	</div>
+
+
+
+{% endblock %}

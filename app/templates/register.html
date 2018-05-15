@@ -1,0 +1,282 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}} - Register{% endblock %}
+
+{% block mainframe %}
+
+
+<div class="jumbotron" id="mainFrame">
+	<div class="container">
+	<h2>User Registration</h2>
+	
+		{% if registerForm %}
+        {% if registerURL %}
+		    <form action="{{registerURL}}" method="post" id = "register" name="register" class="form">
+        {% else %}
+            <form action="{{ url_for('users.verifyregister') }}" method="post" id = "register" name="register" class="form">
+        {% endif %}
+		{{registerForm.hidden_tag()}}
+		{{registerForm.createLinuxUser}}
+			<div class="col-md-6">
+			
+				<div class="form-group {% if registerForm.userNameReg.errors %}has-error{% endif %}">				
+					<label class="control-label" for="userName">Username</label>
+					<div class="controls">
+						{{registerForm.userNameReg(class="form-control")}}
+						{% if registerForm.userNameReg.errors %}
+							<span class="help-block pull-right">{{ registerForm.userNameReg.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.passwordReg.errors %}has-error{% endif %}">				
+					<label class="control-label" for="password">Password</label>
+					<div class="controls">
+						{{registerForm.passwordReg(class="form-control")}}
+						{% if registerForm.passwordReg.errors %}
+							<span class="help-block pull-right">{{ registerForm.passwordReg.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.passwordConf.errors %}has-error{% endif %}">				
+					<label class="control-label" for="passwordConf">Confirm Password</label>
+					<div class="controls">
+						{{registerForm.passwordConf(class="form-control")}}
+						{% if registerForm.passwordConf.errors %}
+							<span class="help-block pull-right">{{ registerForm.passwordConf.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.firstName.errors %}has-error{% endif %}">				
+					<label class="control-label" for="firstName">First Name</label>
+					<div class="controls">
+						{{registerForm.firstName(class="form-control")}}
+						{% if registerForm.firstName.errors %}
+							<span class="help-block pull-right">{{ registerForm.firstName.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.lastName.errors %}has-error{% endif %}">				
+					<label class="control-label" for="lastName">Last Name</label>
+					<div class="controls">
+						{{registerForm.lastName(class="form-control")}}
+						{% if registerForm.lastName.errors %}
+							<span class="help-block pull-right">{{ registerForm.lastName.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.company.errors %}has-error{% endif %}">				
+					<label class="control-label" for="company">Company</label>
+					<div class="controls">
+						{{registerForm.company(class="form-control")}}
+						{% if registerForm.company.errors %}
+							<span class="help-block pull-right">{{ registerForm.company.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.email.errors %}has-error{% endif %}">				
+					<label class="control-label" for="email">Email</label>
+					<div class="controls">
+						{{registerForm.email(class="form-control")}}
+						{% if registerForm.email.errors %}
+							<span class="help-block pull-right">{{ registerForm.email.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+						
+			</div>
+			<div class="col-md-6">
+				<div class="form-group {% if registerForm.officePhone.errors %}has-error{% endif %}">				
+					<label class="control-label" for="officePhone">Tel (Office)</label>
+					<div class="controls">
+						{{registerForm.officePhone(class="form-control")}}
+						{% if registerForm.officePhone.errors %}
+							<span class="help-block pull-right">{{ registerForm.officePhone.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.mobilePhone.errors %}has-error{% endif %}">				
+					<label class="control-label" for="mobilePhone">Tel (Mobile)</label>
+					<div class="controls">
+						{{registerForm.mobilePhone(class="form-control")}}
+						{% if registerForm.mobilePhone.errors %}
+							<span class="help-block pull-right">{{ registerForm.mobilePhone.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.street.errors %}has-error{% endif %}">				
+					<label class="control-label" for="street">Street Name</label>
+					<div class="controls">
+						{{registerForm.street(class="form-control")}}
+						{% if registerForm.street.errors %}
+							<span class="help-block pull-right">{{ registerForm.street.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.city.errors %}has-error{% endif %}">				
+					<label class="control-label" for="city">City</label>
+					<div class="controls">
+						{{registerForm.city(class="form-control")}}
+						{% if registerForm.city.errors %}
+							<span class="help-block pull-right">{{ registerForm.city.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.state.errors %}has-error{% endif %}">				
+					<label class="control-label" for="state">State</label>
+					<div class="controls">
+						{{registerForm.state(class="form-control")}}
+						{% if registerForm.state.errors %}
+							<span class="help-block pull-right">{{ registerForm.state.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.zip.errors %}has-error{% endif %}">				
+					<label class="control-label" for="zip">Zip Code</label>
+					<div class="controls">
+						{{registerForm.zip(class="form-control")}}
+						{% if registerForm.zip.errors %}
+							<span class="help-block pull-right">{{ registerForm.zip.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group {% if registerForm.country.errors %}has-error{% endif %}">				
+					<label class="control-label" for="country">Country</label>
+					<div class="controls">
+						{{registerForm.country(class="form-control")}}
+						{% if registerForm.country.errors %}
+							<span class="help-block pull-right">{{ registerForm.country.errors[0] }}</span>
+						{% endif %}
+					</div>				
+				</div>
+				<div class="form-group">
+					<button id="registerBtn" class="btn btn-success btn-block" type="submit" value="Register" name="registerbtn">Register</button>
+				</div>
+				
+			</div>
+		</form>
+		{% endif %}
+		
+		</div>
+		
+		
+	</div>
+
+{% if 'OPTION_AUTO_SETUP' in config and config['OPTION_AUTO_SETUP'] == True %}
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Confirm local user creation</h4>
+		      </div>
+		      <div class="modal-body">
+				<p>The requested user name was <i>not</i> found on the local linux server. Setting up their clusters
+				through this tool will fail unless they have a user account created. Choose cancel to fix the problem
+				before adding the user. If you choose to proceed anyway, you <b>must</b> create the
+				linux user of the same name locally before creating any clusters on the sonic platform.
+		      </div>
+		      <div class="modal-footer">
+		        <button id="confirmCancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		        <button id="confirmCreateUser" type="button" class="btn btn-primary" data-dismiss="modal">Proceed Anyway</button>
+		      </div>
+		    </div>
+		  </div>
+	</div>
+<!--<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+		  <!--<div class="modal-dialog">-->
+		    <!--<div class="modal-content">-->
+		      <!--<div class="modal-header">-->
+		        <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>-->
+		        <!--<h4 class="modal-title" id="myModalLabel">Confirm local user creation</h4>-->
+		      <!--</div>-->
+		      <!--<div class="modal-body">			        -->
+				<!--<p>The requested user name was <i>not</i> found on the local linux server. Setting up their clusters -->
+				<!--through this tool will fail unless they have a user account created. Choose cancel to fix the problem-->
+				<!--before adding the user. If you choose to proceed but not create the user, you <b>must</b> create the-->
+				<!--linux user of the same name locally before creating any clusters on the sonic platform. If you choose-->
+				<!--to create the user now, the user will be added to the local system with the standard useradd binary.</p>-->
+		      <!--</div>-->
+		      <!--<div class="modal-footer">-->
+		        <!--<button id="confirmCancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>	-->
+		        <!--<button id="confirmCreateUser" type="button" class="btn btn-primary" data-dismiss="modal">Proceed and create the user</button>-->
+		        <!--<button id="confirmNotCreateUser" type="button" class="btn btn-danger" data-dismiss="modal">Proceed but do not create the user</button>		        -->
+		      <!--</div>-->
+		    <!--</div>-->
+		  <!--</div>-->
+	<!--</div>-->
+
+
+<script>
+$(document).ready(function(){
+	
+	function sendJS(obj, path, callback){
+
+	    $.ajax({
+	        type: "POST",
+	        url: "{{ url_for('index', _external=True)}}"+path,
+	        data: JSON.stringify(obj),
+	        success: callback,
+	        dataType: 'json',
+	        contentType:"application/json"
+	    });
+
+	};
+	
+	
+	
+	var linuxUsernameChecked = false;
+	$('#register').submit(function(e){
+		
+		$('#registerBtn').prop('disabled',true);
+		
+		if (linuxUsernameChecked == false){			
+			
+			e.preventDefault();
+			
+			var user = $('#userNameReg').val();
+			var path = 'checkLinuxUserExists';
+			
+			sendJS({'user':user}, path, function(r){
+				
+				if (r['r'] == false){					
+					$("#confirmModal").modal('show'); 
+				}else{
+					linuxUsernameChecked = true;
+					$('#register').submit();
+				}				
+			})			
+		}else{			
+			return true;
+		}
+		
+	})
+	
+	$("#confirmCreateUser").click(function(){
+			
+		$('#createLinuxUser').val('true');
+		linuxUsernameChecked = true;
+		$('#register').submit();
+	})
+	
+	$("#confirmNotCreateUser").click(function(){
+			
+		$('#createLinuxUser').val('false');
+		linuxUsernameChecked = true;
+		$('#register').submit();
+			
+	})
+	
+	$("#confirmCancel").click(function(){
+		
+		$('#registerBtn').prop('disabled',false);		
+			
+	})	
+	
+	
+	
+})
+
+</script>
+{% endif %}
+
+{% endblock %}

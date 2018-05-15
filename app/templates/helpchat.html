@@ -1,0 +1,170 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}} - App{% endblock %}
+
+{% block mainframe %}
+
+<style>
+
+.panel{
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+
+
+textarea{height:300px;width:72%;resize:none;}
+
+textarea.rotate {
+    -webkit-animation: rotation 0.5s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0) translateY(0) ;}
+    to   {-webkit-transform: rotateX(359deg) rotateY(359deg) rotateZ(719deg) translateX(0) translateY(0) ;}
+}
+
+#chatbox{
+padding: 10px;
+border: black inset 3px;
+border-radius: 15px;
+float: left;
+width:550px;
+height: 333px;
+background-color: grey;
+box-shadow: 10px 10px 5px #A8A8A8 ;
+}
+
+#chatbox br{clear:both;}
+
+#users {width:22%;
+        float:right;
+        border:black solid 1px;
+        height:294px;
+        padding:5px;
+        background-color: #F0F0F0;
+        border: #989898  outset 3px;}
+
+#users ul{overflow:auto;
+}
+
+.chatbox input{
+    width: 80%;
+    display: inline-block;
+    margin: 0;
+    }
+.chatbox .chatsendbtn{
+    width: 20%;
+    margin-left:-3px;
+    vertical-align:initial;
+    }
+.chatbox .close{
+    display:none
+}
+
+.panel-body{
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+    .jumbotron{
+    -webkit-transition: background 1.5s linear;
+    -moz-transition: background 1.5s linear;
+    -ms-transition: background 1.5s linear;
+    -o-transition: background 1.5s linear;
+    transition: background 1.5s linear;
+}
+
+</style>
+<link href="{{url_for('static', filename='css/bootstrap-switch.min.css')}}" rel="stylesheet">
+
+
+<script>
+    var user = "{{user}}";
+    var fName = "{{fname}}";
+    var lName = "{{lname}}";
+</script>
+
+
+<div class="jumbotron"  id="mainFrame">
+    <div class="col-md-3">
+        <div class="panel panel-warning">
+            <div class="panel-heading">Chat Status</div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="status-switch">Availability Status</label>
+                            <input data-on-text="Available" data-off-text="Away" data-off-color="warning" type="checkbox" name="status-switch" id="status-switch" checked>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="numUsersOnline">Users Online</label>
+                            <input disabled type="text" class="form-control" id="numUsersOnline">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="numUsersAway">Users Offline</label>
+                            <input disabled type="text" class="form-control" id="numUsersAway">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 chatbox" data-chatroom="LOCAL">
+        <div class="panel panel-success">
+            <div class="panel-heading">Local Chat</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <textarea disabled="" class="form-control textoutput" rows="12"></textarea>
+                    <input class="form-control chatmsginput">
+                    <button type="button" class="btn btn-default chatsendbtn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="chatBoxesContainer">
+        <!--<div class="col-md-6">-->
+            <!--<div class="panel panel-warning">-->
+                <!--<div class="panel-heading">Help Chat Window</div>-->
+                <!--<div class="panel-body">-->
+                    <!--{{user}}-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-6 chatbox">-->
+            <!--<div class="panel panel-danger">-->
+                <!--<div class="panel-heading">Chat</div>-->
+                <!--<div class="panel-body">-->
+                    <!--<div class="form-group">-->
+                      <!--<textarea class="form-control" rows="12"></textarea>-->
+                        <!--<input class="form-control">-->
+                        <!--<button type="button" class="btn btn-default">Send</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+    </div>
+</div>
+
+<!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>-->
+<script src="{{url_for('static', filename='js/functions.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/bootstrap-switch.min.js')}}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js"></script>
+<script src="{{url_for('static', filename='js/select2.min.js')}}"></script>
+
+<!--<script src="{{url_for('static', filename='js/underscore-min.js')}}"></script>-->
+<!--<script src="{{url_for('static', filename='js/mainapp.js')}}"></script>-->
+<!--<script src="{{url_for('static', filename='js/mainappeg.js')}}"></script>-->
+<script src="{{url_for('static', filename='js/mainappchat.js')}}"></script>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}} - App{% endblock %}
+
+{% block mainframe %}
+
+<style>
+
+.panel{
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+
+
+textarea{height:300px;
+         width:100%;
+         resize:none;}
+
+textarea.rotate {
+    -webkit-animation: rotation 0.5s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0) translateY(0) ;}
+    to   {-webkit-transform: rotateX(359deg) rotateY(359deg) rotateZ(719deg) translateX(0) translateY(0) ;}
+}
+
+#chatbox{
+padding: 10px;
+border: black inset 3px;
+border-radius: 15px;
+float: left;
+width:550px;
+background-color: grey;
+box-shadow: 10px 10px 5px #A8A8A8 ;
+}
+
+#chatbox br{clear:both;}
+
+#users {width:22%;
+        float:right;
+        border:black solid 1px;
+        height:294px;
+        padding:5px;
+        background-color: #F0F0F0;
+        border: #989898  outset 3px;}
+
+#users ul{overflow:auto;
+}
+
+    .footermsg{
+        border: rgba(49, 128, 0, 0.52) inset 5px;
+    }
+
+.statusmsg{
+    clear:right;
+    float:right;
+    margin-top:-20px;
+    }
+
+</style>
+
+<script>
+    var user = "{{user}}";
+    var fName = "{{fname}}";
+    var lName = "{{lname}}";
+    {% if roomName %}
+        var roomName = "{{roomName}}";
+    {% else %}
+        var roomName = null;
+    {% endif %}
+</script>
+
+
+<div class="jumbotron"  id="mainFrame">
+    <div class="container">
+        <!--<div class="col-md-6">-->
+            <!--<div class="panel panel-warning">-->
+                <!--<div class="panel-heading">Help Chat Window</div>-->
+                <!--<div class="panel-body">-->
+                    <!--{{user}}-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <h1>Welcome MIS Emergency Chat</h1>
+        <div id="chatbox" style="background-color: #57D409; border: #7ED81B  outset 3px;">
+            <textarea disabled class="textoutput" style=" border: #9EFF01  outset 3px; background-color: rgba(255, 255, 255, 0.68);"></textarea>
+            <!--<div id="users">-->
+                <!--<ul>-->
+                    <!--<li style="list-style:square outside none;">admin</li>-->
+                <!--</ul>-->
+            <!--</div><br>-->
+            <textarea class="chatmsginput" style="width: 300px;height: 80px;"></textarea>
+            <button class='chatsendbtn' style="margin-left: 150;float: right;  margin-right: 125px; font-size: 20px; margin-top: 25px;">Send</button>
+            <span class="statusmsg">Stand By...</span>
+        </div>
+        <img src="{{url_for('static', filename='img/rvcc_athletic_logo.png')}}" style="height: 500px;float: left;">
+        <br style="clear:both;">
+        <p class="footermsg">
+            If no response, please call 908-231-8811.
+        </p>
+
+
+
+    </div>
+</div>
+
+<!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>-->
+
+<script type="text/javascript" src="{{url_for('static', filename='js/bootstrap-switch.min.js')}}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js"></script>
+<script src="{{url_for('static', filename='js/select2.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/functions.js')}}"></script>
+<!--<script src="{{url_for('static', filename='js/underscore-min.js')}}"></script>-->
+<!--<script src="{{url_for('static', filename='js/mainapp.js')}}"></script>-->
+<!--<script src="{{url_for('static', filename='js/mainappeg.js')}}"></script>-->
+<script src="{{url_for('static', filename='js/mainappchatclient.js')}}"></script>
+
+{% endblock %}

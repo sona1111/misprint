@@ -1,0 +1,102 @@
+.border-red{
+	border-radius:6px;
+	border:red outset 2px;	
+	background:#FF9191
+}
+
+.notesEditor p:hover{
+    cursor:pointer;
+    background-color:#E7D4D4;
+}
+
+.notesHidden{
+    display:none;
+}
+
+.importantField{
+  border-color: #D2E966;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(220, 233, 102, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(220, 233, 102, 0.6);
+}
+
+.fixedNumberField{
+  border-color: rgba(106, 233, 102, 0.5);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 124, 212, 0.6);;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 124, 212, 0.6);;
+}
+
+.drugsField{
+  border-color: #8766E9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(18, 201, 255, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 178, 233, 0.6);
+}
+
+#notes_mdim, #notes_mtc, #notes_dahi, .notesHidden td{
+    white-space: pre-wrap;
+}
+
+.panel-heading[data-toggle="collapse"]{
+    cursor:pointer;
+}
+
+.strike-li{
+    list-style:none;
+    text-align:center;
+}
+
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: rgb(171, 23, 113);
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+.template{
+    display:none;
+}
+
+@keyframes highlightFlash {
+  0% {
+    background: #FFC1C1;
+    border: #C50505 solid;
+  }
+  50% {
+    border: 1px solid #e3e3e3;
+  }
+  100% {
+    background: none;
+  }
+}
+
+.highlightFlash{
+  animation: highlightFlash 1.5s;
+}
+

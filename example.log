@@ -1,0 +1,1496 @@
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:49:49] "POST /clustersAlpha HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:50:49] "POST /clustersAlpha HTTP/1.1" 200 -
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/views.py', reloading
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/views.py', reloading
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:51:49] "POST /clustersAlpha HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:51:58] "GET /clusters HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:51:58] "GET /static/img/logo.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:51:58] "GET /static/img/home_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:51:58] "GET /static/img/article_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:51:58] "GET /static/img/db.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:51:58] "GET /static/css/normalize.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:51:58] "GET /static/css/default.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:51:58] "GET /static/img/mashframe.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:52:04] "POST /verifylogin HTTP/1.1" 302 -
+[DEBUG] : Using access key provided by client.
+[DEBUG] : Using secret key provided by client.
+[DEBUG] : Method: POST
+[DEBUG] : Path: /
+[DEBUG] : Data: 
+[DEBUG] : Headers: {}
+[DEBUG] : Host: ec2.us-east-1.amazonaws.com
+[DEBUG] : Port: 443
+[DEBUG] : Params: {'Action': 'DescribeInstances', 'Version': '2014-05-01'}
+[DEBUG] : establishing HTTPS connection: host=ec2.us-east-1.amazonaws.com, kwargs={'port': 443, 'timeout': 70}
+[DEBUG] : Token: None
+[DEBUG] : using _calc_signature_2
+[DEBUG] : query string: AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeInstances&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A04Z&Version=2014-05-01
+[DEBUG] : string_to_sign: POST
+ec2.us-east-1.amazonaws.com
+/
+AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeInstances&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A04Z&Version=2014-05-01
+[DEBUG] : len(b64)=44
+[DEBUG] : base64 encoded digest: ZGuMsplTWifpDHhgumB0piDZUsR2XM1R0qm6QMomqcc=
+[DEBUG] : query_string: AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeInstances&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A04Z&Version=2014-05-01 Signature: ZGuMsplTWifpDHhgumB0piDZUsR2XM1R0qm6QMomqcc=
+[DEBUG] : wrapping ssl socket; CA certificate file=/usr/local/lib/python2.7/dist-packages/boto/cacerts/cacerts.txt
+[DEBUG] : validating server certificate: hostname=ec2.us-east-1.amazonaws.com, certificate hosts=['ec2.us-east-1.amazonaws.com', 'ec2.amazonaws.com', 'us-east-1.ec2.amazonaws.com']
+[DEBUG] : <?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2014-05-01/">
+    <requestId>d837905f-c4d5-4546-8301-bbe5cac48683</requestId>
+    <reservationSet>
+        <item>
+            <reservationId>r-f3568c8c</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-dd46138d</instanceId>
+                    <imageId>ami-018c9568</imageId>
+                    <instanceState>
+                        <code>80</code>
+                        <name>stopped</name>
+                    </instanceState>
+                    <privateDnsName>ip-10-0-0-110.ec2.internal</privateDnsName>
+                    <dnsName/>
+                    <reason>User initiated (2014-06-20 14:40:20 GMT)</reason>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-16T21:17:51.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-919dcaf8</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-6f729918</subnetId>
+                    <vpcId>vpc-2f73a74a</vpcId>
+                    <privateIpAddress>10.0.0.110</privateIpAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-9c9802f9</groupId>
+                            <groupName>PaulHeadNode</groupName>
+                        </item>
+                    </groupSet>
+                    <stateReason>
+                        <code>Client.UserInitiatedShutdown</code>
+                        <message>Client.UserInitiatedShutdown: User initiated shutdown</message>
+                    </stateReason>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-b7cb74fe</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-06T14:58:46.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>ZSFRV1402066722363</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>PaulHeadNode</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-aec69cd9</networkInterfaceId>
+                            <subnetId>subnet-6f729918</subnetId>
+                            <vpcId>vpc-2f73a74a</vpcId>
+                            <description>Primary network interface</description>
+                            <ownerId>407138469001</ownerId>
+                            <status>in-use</status>
+                            <macAddress>0a:06:6b:f0:43:70</macAddress>
+                            <privateIpAddress>10.0.0.110</privateIpAddress>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-9c9802f9</groupId>
+                                    <groupName>PaulHeadNode</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-193e2179</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2014-06-06T14:58:42.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>10.0.0.110</privateIpAddress>
+                                    <primary>true</primary>
+                                </item>
+                            </privateIpAddressesSet>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-4714a038</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-659bb435</instanceId>
+                    <imageId>ami-013f9768</imageId>
+                    <instanceState>
+                        <code>16</code>
+                        <name>running</name>
+                    </instanceState>
+                    <privateDnsName>ip-10-0-0-123.ec2.internal</privateDnsName>
+                    <dnsName/>
+                    <reason/>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-20T14:40:24.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-825ea7eb</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-6f729918</subnetId>
+                    <vpcId>vpc-2f73a74a</vpcId>
+                    <privateIpAddress>10.0.0.123</privateIpAddress>
+                    <ipAddress>54.85.112.72</ipAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-7d990318</groupId>
+                            <groupName>PaulComputeNode</groupName>
+                        </item>
+                    </groupSet>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-8a57dbc3</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-13T15:03:59.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>bOTPX1402671835276</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>PaulHeadNode2</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-29446b5e</networkInterfaceId>
+                            <subnetId>subnet-6f729918</subnetId>
+                            <vpcId>vpc-2f73a74a</vpcId>
+                            <description>Primary network interface</description>
+                            <ownerId>407138469001</ownerId>
+                            <status>in-use</status>
+                            <macAddress>0a:6a:3a:e6:de:66</macAddress>
+                            <privateIpAddress>10.0.0.123</privateIpAddress>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-7d990318</groupId>
+                                    <groupName>PaulComputeNode</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-41ca2e22</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2014-06-13T15:03:55.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <association>
+                                <publicIp>54.85.112.72</publicIp>
+                                <publicDnsName/>
+                                <ipOwnerId>407138469001</ipOwnerId>
+                            </association>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>10.0.0.123</privateIpAddress>
+                                    <primary>true</primary>
+                                    <association>
+                                    <publicIp>54.85.112.72</publicIp>
+                                    <publicDnsName/>
+                                    <ipOwnerId>407138469001</ipOwnerId>
+                                    </association>
+                                </item>
+                            </privateIpAddressesSet>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-f545368a</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-22a23d09</instanceId>
+                    <imageId>ami-018c9568</imageId>
+                    <instanceState>
+                        <code>16</code>
+                        <name>running</name>
+                    </instanceState>
+                    <privateDnsName>ip-10-0-0-101.ec2.internal</privateDnsName>
+                    <dnsName/>
+                    <reason/>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-27T18:50:11.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-919dcaf8</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-6f729918</subnetId>
+                    <vpcId>vpc-2f73a74a</vpcId>
+                    <privateIpAddress>10.0.0.101</privateIpAddress>
+                    <ipAddress>54.86.169.158</ipAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-7d990318</groupId>
+                            <groupName>PaulComputeNode</groupName>
+                        </item>
+                    </groupSet>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-67375f2e</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-27T18:50:19.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>yNSAq1403895010546</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>PaulComputeNode</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-09c0fa7e</networkInterfaceId>
+                            <subnetId>subnet-6f729918</subnetId>
+                            <vpcId>vpc-2f73a74a</vpcId>
+                            <description>Primary network interface</description>
+                            <ownerId>407138469001</ownerId>
+                            <status>in-use</status>
+                            <macAddress>0a:3c:f7:0c:04:6b</macAddress>
+                            <privateIpAddress>10.0.0.101</privateIpAddress>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-7d990318</groupId>
+                                    <groupName>PaulComputeNode</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-eacf0689</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2014-06-27T18:50:11.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <association>
+                                <publicIp>54.86.169.158</publicIp>
+                                <publicDnsName/>
+                                <ipOwnerId>407138469001</ipOwnerId>
+                            </association>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>10.0.0.101</privateIpAddress>
+                                    <primary>true</primary>
+                                    <association>
+                                    <publicIp>54.86.169.158</publicIp>
+                                    <publicDnsName/>
+                                    <ipOwnerId>407138469001</ipOwnerId>
+                                    </association>
+                                </item>
+                            </privateIpAddressesSet>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-20853a5f</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet>
+                <item>
+                    <groupId>sg-16ff4a7c</groupId>
+                    <groupName>FlaskServer</groupName>
+                </item>
+            </groupSet>
+            <instancesSet>
+                <item>
+                    <instanceId>i-9edc16b5</instanceId>
+                    <imageId>ami-018c9568</imageId>
+                    <instanceState>
+                        <code>16</code>
+                        <name>running</name>
+                    </instanceState>
+                    <privateDnsName>domU-12-31-39-0C-DE-6C.compute-1.internal</privateDnsName>
+                    <dnsName>ec2-54-243-63-34.compute-1.amazonaws.com</dnsName>
+                    <reason/>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-16T22:03:41.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-919dcaf8</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <privateIpAddress>10.215.221.150</privateIpAddress>
+                    <ipAddress>54.243.63.34</ipAddress>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-16ff4a7c</groupId>
+                            <groupName>FlaskServer</groupName>
+                        </item>
+                    </groupSet>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-ae099ce7</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-16T22:03:44.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>sPsVz1402956220444</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>Flask Webserver</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet/>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-028bf87d</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-593fa072</instanceId>
+                    <imageId>ami-018c9568</imageId>
+                    <instanceState>
+                        <code>16</code>
+                        <name>running</name>
+                    </instanceState>
+                    <privateDnsName>ip-10-0-0-102.ec2.internal</privateDnsName>
+                    <dnsName/>
+                    <reason/>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-27T20:36:09.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-919dcaf8</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-6f729918</subnetId>
+                    <vpcId>vpc-2f73a74a</vpcId>
+                    <privateIpAddress>10.0.0.102</privateIpAddress>
+                    <ipAddress>54.84.57.15</ipAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-7d990318</groupId>
+                            <groupName>PaulComputeNode</groupName>
+                        </item>
+                    </groupSet>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-b7771ffe</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-27T20:36:13.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>zEHKW1403901369115</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>PaulComputeNode2</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-c799a3b0</networkInterfaceId>
+                            <subnetId>subnet-6f729918</subnetId>
+                            <vpcId>vpc-2f73a74a</vpcId>
+                            <description>Primary network interface</description>
+                            <ownerId>407138469001</ownerId>
+                            <status>in-use</status>
+                            <macAddress>0a:d5:80:e6:6a:cb</macAddress>
+                            <privateIpAddress>10.0.0.102</privateIpAddress>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-7d990318</groupId>
+                                    <groupName>PaulComputeNode</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-49ef262a</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2014-06-27T20:36:09.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <association>
+                                <publicIp>54.84.57.15</publicIp>
+                                <publicDnsName/>
+                                <ipOwnerId>407138469001</ipOwnerId>
+                            </association>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>10.0.0.102</privateIpAddress>
+                                    <primary>true</primary>
+                                    <association>
+                                    <publicIp>54.84.57.15</publicIp>
+                                    <publicDnsName/>
+                                    <ipOwnerId>407138469001</ipOwnerId>
+                                    </association>
+                                </item>
+                            </privateIpAddressesSet>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+    </reservationSet>
+</DescribeInstancesResponse>
+[DEBUG] : Method: POST
+[DEBUG] : Path: /
+[DEBUG] : Data: 
+[DEBUG] : Headers: {}
+[DEBUG] : Host: ec2.us-east-1.amazonaws.com
+[DEBUG] : Port: 443
+[DEBUG] : Params: {'Action': 'DescribeImages', 'Version': '2014-05-01', 'Owner.1': 'self'}
+[DEBUG] : Token: None
+[DEBUG] : using _calc_signature_2
+[DEBUG] : query string: AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeImages&Owner.1=self&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A05Z&Version=2014-05-01
+[DEBUG] : string_to_sign: POST
+ec2.us-east-1.amazonaws.com
+/
+AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeImages&Owner.1=self&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A05Z&Version=2014-05-01
+[DEBUG] : len(b64)=44
+[DEBUG] : base64 encoded digest: GGTu/S+NAXKA1cb8BfZMNKNXPzBLugDejXUOpKlhUmU=
+[DEBUG] : query_string: AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeImages&Owner.1=self&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A05Z&Version=2014-05-01 Signature: GGTu/S+NAXKA1cb8BfZMNKNXPzBLugDejXUOpKlhUmU=
+[DEBUG] : <?xml version="1.0" encoding="UTF-8"?>
+<DescribeImagesResponse xmlns="http://ec2.amazonaws.com/doc/2014-05-01/">
+    <requestId>1a41315f-253a-45d5-80af-bc3e95af3cb0</requestId>
+    <imagesSet>
+        <item>
+            <imageId>ami-5cfe0234</imageId>
+            <imageLocation>407138469001/PaulHeadNode2</imageLocation>
+            <imageState>available</imageState>
+            <imageOwnerId>407138469001</imageOwnerId>
+            <isPublic>false</isPublic>
+            <architecture>x86_64</architecture>
+            <imageType>machine</imageType>
+            <kernelId>aki-919dcaf8</kernelId>
+            <name>PaulHeadNode2</name>
+            <description>test2</description>
+            <rootDeviceType>ebs</rootDeviceType>
+            <rootDeviceName>/dev/sda1</rootDeviceName>
+            <blockDeviceMapping>
+                <item>
+                    <deviceName>/dev/sda1</deviceName>
+                    <ebs>
+                        <snapshotId>snap-3363dbe4</snapshotId>
+                        <volumeSize>8</volumeSize>
+                        <deleteOnTermination>true</deleteOnTermination>
+                        <volumeType>standard</volumeType>
+                        <encrypted>false</encrypted>
+                    </ebs>
+                </item>
+            </blockDeviceMapping>
+            <virtualizationType>paravirtual</virtualizationType>
+            <hypervisor>xen</hypervisor>
+        </item>
+        <item>
+            <imageId>ami-6e807c06</imageId>
+            <imageLocation>407138469001/PaulHeadNode-Test</imageLocation>
+            <imageState>available</imageState>
+            <imageOwnerId>407138469001</imageOwnerId>
+            <isPublic>false</isPublic>
+            <architecture>x86_64</architecture>
+            <imageType>machine</imageType>
+            <kernelId>aki-919dcaf8</kernelId>
+            <name>PaulHeadNode-Test</name>
+            <description>none</description>
+            <rootDeviceType>ebs</rootDeviceType>
+            <rootDeviceName>/dev/sda1</rootDeviceName>
+            <blockDeviceMapping>
+                <item>
+                    <deviceName>/dev/sda1</deviceName>
+                    <ebs>
+                        <snapshotId>snap-4fce7798</snapshotId>
+                        <volumeSize>8</volumeSize>
+                        <deleteOnTermination>true</deleteOnTermination>
+                        <volumeType>standard</volumeType>
+                        <encrypted>false</encrypted>
+                    </ebs>
+                </item>
+            </blockDeviceMapping>
+            <virtualizationType>paravirtual</virtualizationType>
+            <hypervisor>xen</hypervisor>
+        </item>
+        <item>
+            <imageId>ami-7dd43814</imageId>
+            <imageLocation>407138469001/testing</imageLocation>
+            <imageState>available</imageState>
+            <imageOwnerId>407138469001</imageOwnerId>
+            <isPublic>false</isPublic>
+            <architecture>i386</architecture>
+            <imageType>machine</imageType>
+            <kernelId>aki-5f15f636</kernelId>
+            <ramdiskId>ari-d5709dbc</ramdiskId>
+            <name>testing</name>
+            <description>just for testing</description>
+            <rootDeviceType>ebs</rootDeviceType>
+            <rootDeviceName>/dev/sda1</rootDeviceName>
+            <blockDeviceMapping>
+                <item>
+                    <deviceName>/dev/sda1</deviceName>
+                    <ebs>
+                        <snapshotId>snap-c33163aa</snapshotId>
+                        <volumeSize>15</volumeSize>
+                        <deleteOnTermination>true</deleteOnTermination>
+                        <volumeType>standard</volumeType>
+                        <encrypted>false</encrypted>
+                    </ebs>
+                </item>
+                <item>
+                    <deviceName>/dev/sda2</deviceName>
+                    <virtualName>ephemeral0</virtualName>
+                </item>
+            </blockDeviceMapping>
+            <virtualizationType>paravirtual</virtualizationType>
+            <hypervisor>xen</hypervisor>
+        </item>
+    </imagesSet>
+</DescribeImagesResponse>
+[DEBUG] : closing all HTTP connections
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:52:05] "GET /clusters HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:52:05] "GET /static/js/Chart.min.js HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:52:05] "GET /static/js/date.format.js HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:52:05] "GET /static/img/logout.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:52:05] "POST /clustersAlpha HTTP/1.1" 200 -
+[DEBUG] : Using access key provided by client.
+[DEBUG] : Using secret key provided by client.
+[DEBUG] : Method: POST
+[DEBUG] : Path: /
+[DEBUG] : Data: 
+[DEBUG] : Headers: {}
+[DEBUG] : Host: ec2.us-east-1.amazonaws.com
+[DEBUG] : Port: 443
+[DEBUG] : Params: {'Action': 'DescribeInstances', 'Version': '2014-05-01'}
+[DEBUG] : establishing HTTPS connection: host=ec2.us-east-1.amazonaws.com, kwargs={'port': 443, 'timeout': 70}
+[DEBUG] : Token: None
+[DEBUG] : using _calc_signature_2
+[DEBUG] : query string: AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeInstances&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A06Z&Version=2014-05-01
+[DEBUG] : string_to_sign: POST
+ec2.us-east-1.amazonaws.com
+/
+AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeInstances&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A06Z&Version=2014-05-01
+[DEBUG] : len(b64)=44
+[DEBUG] : base64 encoded digest: iHv3BcORD+J3ty87F9sZvzC+ETkkYQ5WwT/kmyaTHEo=
+[DEBUG] : query_string: AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeInstances&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A06Z&Version=2014-05-01 Signature: iHv3BcORD+J3ty87F9sZvzC+ETkkYQ5WwT/kmyaTHEo=
+[DEBUG] : wrapping ssl socket; CA certificate file=/usr/local/lib/python2.7/dist-packages/boto/cacerts/cacerts.txt
+[DEBUG] : validating server certificate: hostname=ec2.us-east-1.amazonaws.com, certificate hosts=['ec2.us-east-1.amazonaws.com', 'ec2.amazonaws.com', 'us-east-1.ec2.amazonaws.com']
+[DEBUG] : <?xml version="1.0" encoding="UTF-8"?>
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2014-05-01/">
+    <requestId>5cf6f495-1c91-4542-9a41-e96f506135e5</requestId>
+    <reservationSet>
+        <item>
+            <reservationId>r-f3568c8c</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-dd46138d</instanceId>
+                    <imageId>ami-018c9568</imageId>
+                    <instanceState>
+                        <code>80</code>
+                        <name>stopped</name>
+                    </instanceState>
+                    <privateDnsName>ip-10-0-0-110.ec2.internal</privateDnsName>
+                    <dnsName/>
+                    <reason>User initiated (2014-06-20 14:40:20 GMT)</reason>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-16T21:17:51.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-919dcaf8</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-6f729918</subnetId>
+                    <vpcId>vpc-2f73a74a</vpcId>
+                    <privateIpAddress>10.0.0.110</privateIpAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-9c9802f9</groupId>
+                            <groupName>PaulHeadNode</groupName>
+                        </item>
+                    </groupSet>
+                    <stateReason>
+                        <code>Client.UserInitiatedShutdown</code>
+                        <message>Client.UserInitiatedShutdown: User initiated shutdown</message>
+                    </stateReason>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-b7cb74fe</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-06T14:58:46.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>ZSFRV1402066722363</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>PaulHeadNode</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-aec69cd9</networkInterfaceId>
+                            <subnetId>subnet-6f729918</subnetId>
+                            <vpcId>vpc-2f73a74a</vpcId>
+                            <description>Primary network interface</description>
+                            <ownerId>407138469001</ownerId>
+                            <status>in-use</status>
+                            <macAddress>0a:06:6b:f0:43:70</macAddress>
+                            <privateIpAddress>10.0.0.110</privateIpAddress>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-9c9802f9</groupId>
+                                    <groupName>PaulHeadNode</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-193e2179</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2014-06-06T14:58:42.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>10.0.0.110</privateIpAddress>
+                                    <primary>true</primary>
+                                </item>
+                            </privateIpAddressesSet>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-4714a038</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-659bb435</instanceId>
+                    <imageId>ami-013f9768</imageId>
+                    <instanceState>
+                        <code>16</code>
+                        <name>running</name>
+                    </instanceState>
+                    <privateDnsName>ip-10-0-0-123.ec2.internal</privateDnsName>
+                    <dnsName/>
+                    <reason/>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-20T14:40:24.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-825ea7eb</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-6f729918</subnetId>
+                    <vpcId>vpc-2f73a74a</vpcId>
+                    <privateIpAddress>10.0.0.123</privateIpAddress>
+                    <ipAddress>54.85.112.72</ipAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-7d990318</groupId>
+                            <groupName>PaulComputeNode</groupName>
+                        </item>
+                    </groupSet>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-8a57dbc3</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-13T15:03:59.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>bOTPX1402671835276</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>PaulHeadNode2</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-29446b5e</networkInterfaceId>
+                            <subnetId>subnet-6f729918</subnetId>
+                            <vpcId>vpc-2f73a74a</vpcId>
+                            <description>Primary network interface</description>
+                            <ownerId>407138469001</ownerId>
+                            <status>in-use</status>
+                            <macAddress>0a:6a:3a:e6:de:66</macAddress>
+                            <privateIpAddress>10.0.0.123</privateIpAddress>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-7d990318</groupId>
+                                    <groupName>PaulComputeNode</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-41ca2e22</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2014-06-13T15:03:55.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <association>
+                                <publicIp>54.85.112.72</publicIp>
+                                <publicDnsName/>
+                                <ipOwnerId>407138469001</ipOwnerId>
+                            </association>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>10.0.0.123</privateIpAddress>
+                                    <primary>true</primary>
+                                    <association>
+                                    <publicIp>54.85.112.72</publicIp>
+                                    <publicDnsName/>
+                                    <ipOwnerId>407138469001</ipOwnerId>
+                                    </association>
+                                </item>
+                            </privateIpAddressesSet>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-f545368a</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-22a23d09</instanceId>
+                    <imageId>ami-018c9568</imageId>
+                    <instanceState>
+                        <code>16</code>
+                        <name>running</name>
+                    </instanceState>
+                    <privateDnsName>ip-10-0-0-101.ec2.internal</privateDnsName>
+                    <dnsName/>
+                    <reason/>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-27T18:50:11.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-919dcaf8</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-6f729918</subnetId>
+                    <vpcId>vpc-2f73a74a</vpcId>
+                    <privateIpAddress>10.0.0.101</privateIpAddress>
+                    <ipAddress>54.86.169.158</ipAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-7d990318</groupId>
+                            <groupName>PaulComputeNode</groupName>
+                        </item>
+                    </groupSet>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-67375f2e</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-27T18:50:19.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>yNSAq1403895010546</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>PaulComputeNode</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-09c0fa7e</networkInterfaceId>
+                            <subnetId>subnet-6f729918</subnetId>
+                            <vpcId>vpc-2f73a74a</vpcId>
+                            <description>Primary network interface</description>
+                            <ownerId>407138469001</ownerId>
+                            <status>in-use</status>
+                            <macAddress>0a:3c:f7:0c:04:6b</macAddress>
+                            <privateIpAddress>10.0.0.101</privateIpAddress>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-7d990318</groupId>
+                                    <groupName>PaulComputeNode</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-eacf0689</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2014-06-27T18:50:11.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <association>
+                                <publicIp>54.86.169.158</publicIp>
+                                <publicDnsName/>
+                                <ipOwnerId>407138469001</ipOwnerId>
+                            </association>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>10.0.0.101</privateIpAddress>
+                                    <primary>true</primary>
+                                    <association>
+                                    <publicIp>54.86.169.158</publicIp>
+                                    <publicDnsName/>
+                                    <ipOwnerId>407138469001</ipOwnerId>
+                                    </association>
+                                </item>
+                            </privateIpAddressesSet>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-20853a5f</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet>
+                <item>
+                    <groupId>sg-16ff4a7c</groupId>
+                    <groupName>FlaskServer</groupName>
+                </item>
+            </groupSet>
+            <instancesSet>
+                <item>
+                    <instanceId>i-9edc16b5</instanceId>
+                    <imageId>ami-018c9568</imageId>
+                    <instanceState>
+                        <code>16</code>
+                        <name>running</name>
+                    </instanceState>
+                    <privateDnsName>domU-12-31-39-0C-DE-6C.compute-1.internal</privateDnsName>
+                    <dnsName>ec2-54-243-63-34.compute-1.amazonaws.com</dnsName>
+                    <reason/>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-16T22:03:41.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-919dcaf8</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <privateIpAddress>10.215.221.150</privateIpAddress>
+                    <ipAddress>54.243.63.34</ipAddress>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-16ff4a7c</groupId>
+                            <groupName>FlaskServer</groupName>
+                        </item>
+                    </groupSet>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-ae099ce7</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-16T22:03:44.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>sPsVz1402956220444</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>Flask Webserver</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet/>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+        <item>
+            <reservationId>r-028bf87d</reservationId>
+            <ownerId>407138469001</ownerId>
+            <groupSet/>
+            <instancesSet>
+                <item>
+                    <instanceId>i-593fa072</instanceId>
+                    <imageId>ami-018c9568</imageId>
+                    <instanceState>
+                        <code>16</code>
+                        <name>running</name>
+                    </instanceState>
+                    <privateDnsName>ip-10-0-0-102.ec2.internal</privateDnsName>
+                    <dnsName/>
+                    <reason/>
+                    <keyName>paulkey1</keyName>
+                    <amiLaunchIndex>0</amiLaunchIndex>
+                    <productCodes/>
+                    <instanceType>t1.micro</instanceType>
+                    <launchTime>2014-06-27T20:36:09.000Z</launchTime>
+                    <placement>
+                        <availabilityZone>us-east-1c</availabilityZone>
+                        <groupName/>
+                        <tenancy>default</tenancy>
+                    </placement>
+                    <kernelId>aki-919dcaf8</kernelId>
+                    <monitoring>
+                        <state>disabled</state>
+                    </monitoring>
+                    <subnetId>subnet-6f729918</subnetId>
+                    <vpcId>vpc-2f73a74a</vpcId>
+                    <privateIpAddress>10.0.0.102</privateIpAddress>
+                    <ipAddress>54.84.57.15</ipAddress>
+                    <sourceDestCheck>true</sourceDestCheck>
+                    <groupSet>
+                        <item>
+                            <groupId>sg-7d990318</groupId>
+                            <groupName>PaulComputeNode</groupName>
+                        </item>
+                    </groupSet>
+                    <architecture>x86_64</architecture>
+                    <rootDeviceType>ebs</rootDeviceType>
+                    <rootDeviceName>/dev/sda1</rootDeviceName>
+                    <blockDeviceMapping>
+                        <item>
+                            <deviceName>/dev/sda1</deviceName>
+                            <ebs>
+                                <volumeId>vol-b7771ffe</volumeId>
+                                <status>attached</status>
+                                <attachTime>2014-06-27T20:36:13.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </ebs>
+                        </item>
+                    </blockDeviceMapping>
+                    <virtualizationType>paravirtual</virtualizationType>
+                    <clientToken>zEHKW1403901369115</clientToken>
+                    <tagSet>
+                        <item>
+                            <key>Name</key>
+                            <value>PaulComputeNode2</value>
+                        </item>
+                    </tagSet>
+                    <hypervisor>xen</hypervisor>
+                    <networkInterfaceSet>
+                        <item>
+                            <networkInterfaceId>eni-c799a3b0</networkInterfaceId>
+                            <subnetId>subnet-6f729918</subnetId>
+                            <vpcId>vpc-2f73a74a</vpcId>
+                            <description>Primary network interface</description>
+                            <ownerId>407138469001</ownerId>
+                            <status>in-use</status>
+                            <macAddress>0a:d5:80:e6:6a:cb</macAddress>
+                            <privateIpAddress>10.0.0.102</privateIpAddress>
+                            <sourceDestCheck>true</sourceDestCheck>
+                            <groupSet>
+                                <item>
+                                    <groupId>sg-7d990318</groupId>
+                                    <groupName>PaulComputeNode</groupName>
+                                </item>
+                            </groupSet>
+                            <attachment>
+                                <attachmentId>eni-attach-49ef262a</attachmentId>
+                                <deviceIndex>0</deviceIndex>
+                                <status>attached</status>
+                                <attachTime>2014-06-27T20:36:09.000Z</attachTime>
+                                <deleteOnTermination>true</deleteOnTermination>
+                            </attachment>
+                            <association>
+                                <publicIp>54.84.57.15</publicIp>
+                                <publicDnsName/>
+                                <ipOwnerId>407138469001</ipOwnerId>
+                            </association>
+                            <privateIpAddressesSet>
+                                <item>
+                                    <privateIpAddress>10.0.0.102</privateIpAddress>
+                                    <primary>true</primary>
+                                    <association>
+                                    <publicIp>54.84.57.15</publicIp>
+                                    <publicDnsName/>
+                                    <ipOwnerId>407138469001</ipOwnerId>
+                                    </association>
+                                </item>
+                            </privateIpAddressesSet>
+                        </item>
+                    </networkInterfaceSet>
+                    <ebsOptimized>false</ebsOptimized>
+                </item>
+            </instancesSet>
+        </item>
+    </reservationSet>
+</DescribeInstancesResponse>
+[DEBUG] : Method: POST
+[DEBUG] : Path: /
+[DEBUG] : Data: 
+[DEBUG] : Headers: {}
+[DEBUG] : Host: ec2.us-east-1.amazonaws.com
+[DEBUG] : Port: 443
+[DEBUG] : Params: {'Action': 'DescribeImages', 'Version': '2014-05-01', 'Owner.1': 'self'}
+[DEBUG] : Token: None
+[DEBUG] : using _calc_signature_2
+[DEBUG] : query string: AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeImages&Owner.1=self&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A06Z&Version=2014-05-01
+[DEBUG] : string_to_sign: POST
+ec2.us-east-1.amazonaws.com
+/
+AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeImages&Owner.1=self&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A06Z&Version=2014-05-01
+[DEBUG] : len(b64)=44
+[DEBUG] : base64 encoded digest: UhDvB1QNrH78FnMr5PhvzFBm7tdiXeVxLhYwcHVt6aI=
+[DEBUG] : query_string: AWSAccessKeyId=AKIAILDOWDJ2C2GLPEAQ&Action=DescribeImages&Owner.1=self&SignatureMethod=HmacSHA256&SignatureVersion=2&Timestamp=2014-07-02T13%3A52%3A06Z&Version=2014-05-01 Signature: UhDvB1QNrH78FnMr5PhvzFBm7tdiXeVxLhYwcHVt6aI=
+[DEBUG] : <?xml version="1.0" encoding="UTF-8"?>
+<DescribeImagesResponse xmlns="http://ec2.amazonaws.com/doc/2014-05-01/">
+    <requestId>c85543b8-ce66-45fa-8781-70d647827815</requestId>
+    <imagesSet>
+        <item>
+            <imageId>ami-5cfe0234</imageId>
+            <imageLocation>407138469001/PaulHeadNode2</imageLocation>
+            <imageState>available</imageState>
+            <imageOwnerId>407138469001</imageOwnerId>
+            <isPublic>false</isPublic>
+            <architecture>x86_64</architecture>
+            <imageType>machine</imageType>
+            <kernelId>aki-919dcaf8</kernelId>
+            <name>PaulHeadNode2</name>
+            <description>test2</description>
+            <rootDeviceType>ebs</rootDeviceType>
+            <rootDeviceName>/dev/sda1</rootDeviceName>
+            <blockDeviceMapping>
+                <item>
+                    <deviceName>/dev/sda1</deviceName>
+                    <ebs>
+                        <snapshotId>snap-3363dbe4</snapshotId>
+                        <volumeSize>8</volumeSize>
+                        <deleteOnTermination>true</deleteOnTermination>
+                        <volumeType>standard</volumeType>
+                        <encrypted>false</encrypted>
+                    </ebs>
+                </item>
+            </blockDeviceMapping>
+            <virtualizationType>paravirtual</virtualizationType>
+            <hypervisor>xen</hypervisor>
+        </item>
+        <item>
+            <imageId>ami-6e807c06</imageId>
+            <imageLocation>407138469001/PaulHeadNode-Test</imageLocation>
+            <imageState>available</imageState>
+            <imageOwnerId>407138469001</imageOwnerId>
+            <isPublic>false</isPublic>
+            <architecture>x86_64</architecture>
+            <imageType>machine</imageType>
+            <kernelId>aki-919dcaf8</kernelId>
+            <name>PaulHeadNode-Test</name>
+            <description>none</description>
+            <rootDeviceType>ebs</rootDeviceType>
+            <rootDeviceName>/dev/sda1</rootDeviceName>
+            <blockDeviceMapping>
+                <item>
+                    <deviceName>/dev/sda1</deviceName>
+                    <ebs>
+                        <snapshotId>snap-4fce7798</snapshotId>
+                        <volumeSize>8</volumeSize>
+                        <deleteOnTermination>true</deleteOnTermination>
+                        <volumeType>standard</volumeType>
+                        <encrypted>false</encrypted>
+                    </ebs>
+                </item>
+            </blockDeviceMapping>
+            <virtualizationType>paravirtual</virtualizationType>
+            <hypervisor>xen</hypervisor>
+        </item>
+        <item>
+            <imageId>ami-7dd43814</imageId>
+            <imageLocation>407138469001/testing</imageLocation>
+            <imageState>available</imageState>
+            <imageOwnerId>407138469001</imageOwnerId>
+            <isPublic>false</isPublic>
+            <architecture>i386</architecture>
+            <imageType>machine</imageType>
+            <kernelId>aki-5f15f636</kernelId>
+            <ramdiskId>ari-d5709dbc</ramdiskId>
+            <name>testing</name>
+            <description>just for testing</description>
+            <rootDeviceType>ebs</rootDeviceType>
+            <rootDeviceName>/dev/sda1</rootDeviceName>
+            <blockDeviceMapping>
+                <item>
+                    <deviceName>/dev/sda1</deviceName>
+                    <ebs>
+                        <snapshotId>snap-c33163aa</snapshotId>
+                        <volumeSize>15</volumeSize>
+                        <deleteOnTermination>true</deleteOnTermination>
+                        <volumeType>standard</volumeType>
+                        <encrypted>false</encrypted>
+                    </ebs>
+                </item>
+                <item>
+                    <deviceName>/dev/sda2</deviceName>
+                    <virtualName>ephemeral0</virtualName>
+                </item>
+            </blockDeviceMapping>
+            <virtualizationType>paravirtual</virtualizationType>
+            <hypervisor>xen</hypervisor>
+        </item>
+    </imagesSet>
+</DescribeImagesResponse>
+[DEBUG] : closing all HTTP connections
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:52:06] "GET /clusters HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:52:06] "POST /clustersAlpha HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:53:07] "POST /clustersAlpha HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:54:07] "POST /clustersAlpha HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:55:07] "POST /clustersAlpha HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:56:07] "POST /clustersAlpha HTTP/1.1" 200 -
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/views.py', reloading
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:07] "POST /clustersAlpha HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:11] "GET /clusters3 HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:44] "GET /clusters3 HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:44] "GET /static/css/normalize.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:44] "GET /static/css/default.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:44] "GET /static/img/logo.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:44] "GET /static/img/home_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:44] "GET /static/img/db.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:44] "GET /static/img/article_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:57:44] "GET /static/img/mashframe.png HTTP/1.1" 304 -
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/views.py', reloading
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:17] "GET / HTTP/1.1" 500 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:17] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:17] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:17] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:17] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:17] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:17] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/__init__.py', reloading
+[ERROR] : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/decorators.py", line 67, in decorated_function
+    return f(user = user, loginForm = loginForm, *args, **kwargs)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/views.py", line 109, in index
+    r = 10/0
+ZeroDivisionError: integer division or modulo by zero
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:53] "GET / HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:53] "GET /static/css/normalize.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:53] "GET /static/css/default.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:53] "GET /static/img/logo.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:53] "GET /static/img/home_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:53] "GET /static/img/db.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:53] "GET /static/img/article_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 09:58:53] "GET /static/img/mashframe.png HTTP/1.1" 304 -
+[ERROR] : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/decorators.py", line 67, in decorated_function
+    return f(user = user, loginForm = loginForm, *args, **kwargs)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/views.py", line 109, in index
+    r = 10/0
+ZeroDivisionError: integer division or modulo by zero
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:00:47] "GET / HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:00:47] "GET /static/css/normalize.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:00:47] "GET /static/css/default.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:00:47] "GET /static/img/logo.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:00:47] "GET /static/img/home_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:00:47] "GET /static/img/db.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:00:47] "GET /static/img/article_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:00:47] "GET /static/img/mashframe.png HTTP/1.1" 304 -
+[INFO] :  * Running on http://localhost:5000/
+[ERROR] : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/decorators.py", line 67, in decorated_function
+    return f(user = user, loginForm = loginForm, *args, **kwargs)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/views.py", line 109, in index
+    r = 10/0
+ZeroDivisionError: integer division or modulo by zero
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:01:03] "GET / HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:01:03] "GET /static/css/normalize.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:01:03] "GET /static/css/default.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:01:03] "GET /static/img/logo.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:01:03] "GET /static/img/home_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:01:03] "GET /static/img/db.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:01:03] "GET /static/img/article_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:01:03] "GET /static/img/mashframe.png HTTP/1.1" 304 -
+[ERROR] : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/decorators.py", line 67, in decorated_function
+    return f(user = user, loginForm = loginForm, *args, **kwargs)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/views.py", line 109, in index
+    r = 10/0
+ZeroDivisionError: integer division or modulo by zero
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:07:56] "GET / HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:07:56] "GET /static/css/normalize.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:07:56] "GET /static/css/default.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:07:56] "GET /static/img/logo.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:07:56] "GET /static/img/home_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:07:56] "GET /static/img/db.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:07:56] "GET /static/img/article_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:07:56] "GET /static/img/mashframe.png HTTP/1.1" 304 -
+[INFO] :  * Running on http://localhost:5000/
+[ERROR] : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/decorators.py", line 67, in decorated_function
+    return f(user = user, loginForm = loginForm, *args, **kwargs)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/views.py", line 109, in index
+    r = 10/0
+ZeroDivisionError: integer division or modulo by zero
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:09:12] "GET / HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:09:12] "GET /static/css/normalize.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:09:12] "GET /static/css/default.css HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:09:12] "GET /static/img/logo.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:09:12] "GET /static/img/home_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:09:12] "GET /static/img/db.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:09:12] "GET /static/img/article_16x16.png HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:09:12] "GET /static/img/mashframe.png HTTP/1.1" 304 -
+[ERROR] : Exception on / [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/decorators.py", line 67, in decorated_function
+    return f(user = user, loginForm = loginForm, *args, **kwargs)
+  File "/home/paul/workspace_aws/aws_dev/site1/app/views.py", line 109, in index
+    r = 10/0
+ZeroDivisionError: integer division or modulo by zero
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:39] "GET / HTTP/1.1" 200 -
+[INFO] :  * Running on http://localhost:5000/
+[INFO] :  * Restarting with reloader
+[INFO] :  * Running on http://localhost:5000/
+[INFO] :  * Restarting with reloader
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:56] "GET /databases HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:56] "GET /static/img/bullet.gif HTTP/1.1" 304 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:57] "GET / HTTP/1.1" 500 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:57] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:57] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:57] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:57] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:57] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+[INFO] : 127.0.0.1 - - [02/Jul/2014 10:14:57] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/views.py', reloading
+[INFO] :  * Restarting with reloader
+[INFO] :  * Running on http://localhost:5000/
+[INFO] :  * Running on http://localhost:5000/
+[INFO] :  * Restarting with reloader
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/forms.py', reloading
+[INFO] :  * Restarting with reloader
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/forms.py', reloading
+[INFO] :  * Restarting with reloader
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/__init__.py', reloading
+[INFO] :  * Restarting with reloader
+[INFO] :  * Detected change in '/home/paul/workspace_aws/aws_dev/site1/app/views.py', reloading
+[INFO] :  * Restarting with reloader

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>{% block title %}{% endblock %}</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/bootstrap.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/bootstrap-responsive.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/default_new.css') }}">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	</head>
+		<body>
+            {% if navEnabled %}
+			<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		      <div class="container-fluid">
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+
+		          <a class="navbar-brand" href="{{url_for('index')}}">
+					  {% block navtitle %}{% endblock %}
+					  {% if not self.navtitle() %}
+					  	MisPrint
+					  {% endif %}
+				  </a>
+
+
+		        </div>
+		        <div class="navbar-collapse collapse">
+		          {% if loginForm %}
+
+		          <form action="{{ url_for('verifylogin')}}" method="post" id = "login" name="login" class="navbar-form navbar-right" role="form">
+		            {{loginForm.hidden_tag()}}
+					{{loginForm.wantsurl}}
+		            <div class="form-group">
+		              {{loginForm.userName(placeholder="UserName", class="form-control")}}
+		            </div>
+		            <div class="form-group">		              
+		              {{loginForm.password(placeholder="Password", class="form-control")}}
+		            </div>
+		            <button type="submit" class="btn btn-success" value="Login" name="loginbtn">Sign in</button>
+					<!--<a href="{{ url_for('register') }}" class="btn btn-default">Register</a>-->
+		            
+		          </form>
+
+		          {% else %}
+		          
+		          <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="{{ url_for('MISPrint.mainapp') }}">MISPrint</a></li>
+                        <li><a href="{{ url_for('MISPrint.helpchatclient') }}">Chat Client</a></li>
+
+		            <li class="dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{fname}} {{lname}}<span class="caret"></span></a>
+		              <ul class="dropdown-menu" role="menu">
+
+						{% if not session['aduser'] %}
+		                  <li><a href="{{ url_for('profile') }}">Edit Profile</a></li>
+						{% endif %}
+                        {% if session['level'] == 1%}
+                            <li><a href="{{ url_for('MISPrint.admin') }}">ADMIN</a></li>
+                        {% endif %}
+
+		                <li><a href="{{ url_for('logout') }}">Logout</a></li>                
+		              </ul>
+		            </li>
+
+		          </ul>
+		          
+		          
+		          {% endif %}
+		        </div><!--/.navbar-collapse -->
+		      </div>
+		    </div>
+            {% else %}
+            <div style="height:8px;min-height:0;" class="navbar navbar-inverse navbar-fixed-top" role="navigation"></div>
+            {% endif %}
+		    
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}					
+			{% for message in messages %}
+				<div class="container">
+					<div class="alert alert-info" role="alert">
+	     				 <a class="close" data-dismiss="alert">×</a> 
+	     				 {{ message }}	     				 
+	   				</div>	
+	   				
+	   			</div>					
+			{% endfor %}					
+		{% endif %}
+	{% endwith %}     
+    
+
+			{% block mainframe %}{% endblock %}		
+			
+			{% if not pageType %}
+			{% include "footer.html" %}
+			{% endif %}
+
+
+	</body>
+</html>

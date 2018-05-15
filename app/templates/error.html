@@ -1,0 +1,41 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}} - Error{% endblock %}
+
+{% block mainframe %}
+
+<div class="jumbotron" id="mainFrame">
+	{% if error %}
+	<div class="container">
+		<h2 style="color:red">ERROR - {{ error['title'] }}</h2>
+		<div class="privacyContent">
+			
+			{% if error['type'] == 404 %}
+			<p>
+				It seems like the page you are trying to access is not existent.
+				Please check the date of the page linking you here or try to use the links provided by the website interface.			
+			</p>
+			{% elif error['type'] == 403 %}
+			<p>
+				You have been sent to this page because the account type you are logging in with (if any) does not have the 
+				required permissions to access the link which you were trying to connect to. Please try logging in or using 
+				only the links provided in the website interface			
+			</p>
+			{% elif error['type'] == 410 %}
+			<p>
+				The page you are attempting to access did exist, but has now been deleted. 			
+			</p>
+			{% elif error['type'] == 500 %}
+			<p>
+				The server has had an internal error which prevents this page from loading correctly at this time. Either that, 
+				or the server is simply being overloaded with too many requests. In either case, the error has been logged and the 
+				webmaster notified - the problem should be resolved shortly during normal business hours. 			
+			</p>
+			{% endif %}		
+			
+		</div>
+	</div>
+	{% endif %}
+</div>
+
+{% endblock %}

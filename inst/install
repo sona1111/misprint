@@ -1,0 +1,4 @@
+sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev
+sudo pip install flask flask-wtf flask-socketio flask-mail pymongo gunicorn gevent celery colorlog mechanize python-ldap
+
+db.createCollection( "msgs", { capped: true, size: 50000000 } )

@@ -1,0 +1,60 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}} - Recover Information{% endblock %}
+
+{% block mainframe %}
+
+<div class="jumbotron" id="mainFrame">	
+	<div class="container">
+		<h1>User Recovery</h1>
+		{% if statusMessage %}
+		<h2>{{statusMessage['heading']}}</h2>
+		<p>{{statusMessage['body']}}</p>		
+		{% endif %}
+		{% if forgotUserForm %}
+		<div class="col-md-6">
+		<form action="{{ url_for('forgotUserName') }}" method="post" id = "register" name="register">
+		{{forgotUserForm.hidden_tag()}}
+			
+				<h3>Username Retrieval</h3>
+				<p>If you can not remember the username you signed up with, please enter the email address you signed up with below. 
+				We will send the associated user name to the email address you registered with.</p>
+				<div class="form-group">									
+					{{forgotUserForm.email(placeholder="Email Address", class="form-control")}}
+					{% if forgotUserForm.email.errors %}
+      					<span class="registerErrors">{{ forgotUserForm.email.errors[0] }}</span>
+   					{% endif %}
+				</div>
+				<button type="submit" class="btn btn-warning btn-block" value="Get My Username" name="getusrbtn">Get My Username</button>				
+						
+			
+		</form></div>			
+		{% endif %}
+		{% if forgotPasswordForm %}
+		<div class="col-md-6">
+		<form action="{{ url_for('forgotPassword') }}" method="post" id = "register" name="register">
+		{{forgotPasswordForm.hidden_tag()}}
+			
+				<h3>Forgot your password?</h3>
+				<p>If you are having trouble recalling the password you used to sign up, just enter your user name below. 
+				We will generate a random password for you and send it to the email address you registered with.</p>
+						
+				<div class="form-group">
+					
+					{{forgotPasswordForm.userName(placeholder="Username", class="form-control")}}
+					{% if forgotPasswordForm.userName.errors %}
+      					<span class="registerErrors">{{ forgotPasswordForm.userName.errors[0] }}</span>
+   					{% endif %}					
+				</div>				
+				<button type="submit" class="btn btn-warning btn-block" value="Reset Password" name="getpassbtn">Reset Password</button>						
+			
+		</form></div>					
+		{% endif %}
+	</div>	
+</div>
+		
+	
+
+
+
+{% endblock %}

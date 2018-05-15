@@ -1,0 +1,22 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}}{% endblock %}
+
+{% block mainframe %}
+
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval=15000 style="padding-top:10px;">
+      <div class="carousel-inner">
+        <div class="item">
+          <img src="{{ url_for('static', filename = 'img/slide2.jpg') }}" alt="First slide">
+        </div>
+        <div class="item active">
+          <img src="{{ url_for('static', filename = 'img/slide1.jpg') }}" alt="Second slide">
+        </div>
+      </div>      
+    </div>
+
+
+
+			
+{% endblock %}

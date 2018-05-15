@@ -1,0 +1,25 @@
+{% extends "outer.html" %}
+
+{% block title %}{{banner}} - Information{% endblock %}
+
+{% block mainframe %}
+
+
+
+
+<div class="jumbotron">
+<div class="container">
+	
+	<h1>{% if header %}{{ header }}{% endif %}</h1>
+		<p>
+			
+			{% if body %}
+			{{body|safe}}
+			{% endif %} 
+	    </p>
+
+			
+</div>
+</div>
+
+{% endblock %}
